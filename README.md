@@ -1,7 +1,41 @@
-# Vue 3 + Vite
+# vue2-sub-app
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+> - 参考文档格式：https://github.com/vuejs/vue-router/blob/3f346d09ced494ae2a23f77fa60b5eeacf5f8e0a/docs/api/README.md
 
-## Recommended IDE Setup
+vue-router 源码中一段很精妙的代码：[->](https://github.com/vuejs/vue-router/blob/3f346d09ced494ae2a23f77fa60b5eeacf5f8e0a/src/install.js#L29)
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+```js
+Vue.mixin({
+  beforeCreate() {
+    if (isDef(this.$options.router)) {
+      this._routerRoot = this
+      this._router = this.$options.router
+      this._router.init(this)
+      Vue.util.defineReactive(this, '_route', this._router.history.current)
+    } else {
+      this._routerRoot = (this.$parent && this.$parent._routerRoot) || this // <- this
+    }
+    registerInstance(this, this)
+  }
+})
+```
+
+## Install
+
+## Usage
+
+## APIs
+
+### defineSubRoot
+
+## Components
+
+### SubRouterLink
+
+### SubRouterView
+
+## Props
+
+### $subRoute
+
+### $subRouter

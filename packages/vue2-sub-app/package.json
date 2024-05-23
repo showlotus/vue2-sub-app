@@ -1,14 +1,17 @@
 {
   "name": "vue2-sub-app",
-  "version": "1.0.0",
-  "description": "Any component can also be used as the root component.",
+  "version": "1.0.0-beta.1",
+  "description": "A plugin can make any component can be used as the Root-like component.",
   "files": [
     "dist",
     "types"
   ],
   "main": "dist/index.js",
   "types": "types/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit"
+  },
   "keywords": [
     "vue",
     "plugin"
