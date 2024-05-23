@@ -1,0 +1,26 @@
+{
+  "name": "vue2-sub-app",
+  "version": "1.0.0",
+  "description": "Any component can also be used as the root component.",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {},
+  "keywords": [
+    "vue",
+    "plugin"
+  ],
+  "author": "showlotus <showlotus2000@gmail.com>",
+  "homepage": "https://github.com/showlotus/vue2-sub-app#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/showlotus/vue2-sub-app"
+  },
+  "bugs": {
+    "url": "https://github.com/showlotus/vue2-sub-app/issues"
+  },
+  "license": "MIT"
+}

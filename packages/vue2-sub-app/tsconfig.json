@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "ES2015",
+    "outDir": "dist",
+    "declaration": true,
+    "moduleResolution": "Node",
+    "emitDeclarationOnly": false,
+    "declarationDir": "./types",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
