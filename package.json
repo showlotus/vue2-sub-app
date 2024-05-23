@@ -1,0 +1,12 @@
+{
+  "name": "vue2-sub-app",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "refresh": "rm -rf **/*/node_modules && pnpm i --offline"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
