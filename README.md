@@ -16,26 +16,6 @@ Vue.mixin({
       this._routerRoot = (this.$parent && this.$parent._routerRoot) || this // <- this
     }
     registerInstance(this, this)
-  }
+  },
 })
 ```
-
-## Install
-
-## Usage
-
-## APIs
-
-### defineSubRoot
-
-## Components
-
-### SubRouterLink
-
-### SubRouterView
-
-## Props
-
-### $subRoute
-
-### $subRouter
