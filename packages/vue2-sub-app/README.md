@@ -1,14 +1,23 @@
 # Vue2-Sub-App
 
-A plugin can make any component can be used as the Root-like component.
+Make any component can be used as the Root-like component.
 
 ## Install
 
 ```shell
-npm install vue2-sub-app
+# NPM
+npm install vue2-sub-app --save
+
+# Yarn
+yarn add vue2-sub-app
+
+# pnpm
+pnpm install vue2-sub-app
 ```
 
 ## Usage
+
+### Full Import
 
 ```js
 // main.js
@@ -22,6 +31,31 @@ new Vue({
 })
 ```
 
+### Manually Import
+
+```js
+<script>
+import { defineSubRoot, SubRouterLink, SubRouterView } from 'vue2-sub-app'
+
+export default defineSubRoot({
+  subRoutes: [
+    {
+      path: '/some',
+      component: () => import('./**/some.vue'),
+    },
+  ],
+  components: { SubRouterLink, SubRouterView },
+  props: {},
+  data() {
+    return {
+      /* ... */
+    }
+  },
+  methods: {},
+})
+</script>
+```
+
 ## APIs
 
 ### defineSubRoot
@@ -33,6 +67,8 @@ new Vue({
 ### SubRouterView
 
 ## Props
+
+### $subRoot
 
 ### $subRoute
 

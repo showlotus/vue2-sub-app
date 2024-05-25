@@ -1,12 +1,15 @@
 {
-  "name": "vue2-sub-app",
+  "name": "@showlotus/vue2-sub-app",
   "version": "1.0.0",
-  "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "rimraf": "^5.0.7"
+  },
   "scripts": {
-    "refresh": "rm -rf **/*/node_modules && pnpm i --offline"
+    "dev": " pnpm --filter ./demos run dev",
+    "clear": " rimraf node_modules demos/node_modules packages/vue2-sub-app/node_modules",
+    "refresh": "pnpm run clear && pnpm i --offline"
   },
   "keywords": [],
-  "author": "",
+  "author": "showlotus <showlotus2000@gmail.com>",
   "license": "MIT"
 }

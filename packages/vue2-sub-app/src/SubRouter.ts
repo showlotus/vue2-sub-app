@@ -13,10 +13,12 @@ interface SubRouteParams {
 export default class SubRouter {
   routes: SubRoute[]
   maxRecords: number
+  currentHistoryIndex: number
   history: Array<SubRouteParams>
   _subAppRoute: any
   constructor(routes: SubRoute[], maxRecords = 100) {
     this.routes = routes
+    this.currentHistoryIndex = -1
     this.history = []
     this.maxRecords = maxRecords
     this._subAppRoute = Vue.observable({
@@ -30,20 +32,31 @@ export default class SubRouter {
   }
 
   push(path: string, params: Record<string, any>) {
+    if (path === this._subAppRoute.path) {
+      return
+    }
+
     const route = { path, params }
     this.update(route)
-    this.history.push(route)
+    this.currentHistoryIndex = (this.currentHistoryIndex + 1) % this.maxRecords
+    this.history[this.currentHistoryIndex] = route
   }
 
   replace(path: string, params: Record<string, any>) {
     const route = { path, params }
     this.update(route)
-    this.history[this.history.length - 1] = route
+    this.history[this.currentHistoryIndex] = route
   }
 
   pop() {
-    this.history.pop()
-    this.update(this.history[this.history.length - 1] || {})
+    if (!this.history.length) {
+      return
+    }
+
+    this.history.splice(this.currentHistoryIndex, 1, {} as SubRouteParams)
+    this.currentHistoryIndex =
+      (this.currentHistoryIndex - 1 + this.maxRecords) % this.maxRecords
+    this.update(this.history[this.currentHistoryIndex] || {})
   }
 
   update(routeParams: SubRouteParams) {

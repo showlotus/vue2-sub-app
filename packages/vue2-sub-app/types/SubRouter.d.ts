@@ -9,6 +9,7 @@ interface SubRouteParams {
 export default class SubRouter {
     routes: SubRoute[];
     maxRecords: number;
+    currentHistoryIndex: number;
     history: Array<SubRouteParams>;
     _subAppRoute: any;
     constructor(routes: SubRoute[], maxRecords?: number);

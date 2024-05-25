@@ -1,13 +1,14 @@
 <script>
 import { customRef, ref, watch } from 'vue'
+import { defineSubRoot, SubRouterLink, SubRouterView } from 'vue2-sub-app'
 import subRoutes from '../routes'
 import ChildFour from './ChildFour'
 import i18n from '../i18n'
 
-export default {
+export default defineSubRoot({
   subRoutes: subRoutes,
   i18n: i18n,
-  components: { ChildFour },
+  components: { ChildFour, SubRouterLink, SubRouterView },
   mixins: [],
   provide() {
     return {
@@ -50,7 +51,7 @@ export default {
       this.$root.$i18n.locale = lang
     },
   },
-}
+})
 </script>
 
 <template>
@@ -63,6 +64,17 @@ export default {
       <button @click="toggleLanguage('zh_CN')">to zh_CN</button>
       <button @click="toggleLanguage('en_US')">to en_US</button>
     </div>
+
+    <button @click="$subRouter.push(`/${Date.now()}`)">
+      $subRouter.push(random)
+    </button>
+    <button @click="$subRouter.pop()">$subRouter.pop()</button>
+
+    <ul>
+      <li v-for="(h, i) in $subRouter.history" :key="h.path">
+        {{ i + 1 }}. {{ h }}
+      </li>
+    </ul>
 
     <SubRouterLink
       v-for="route in routes"

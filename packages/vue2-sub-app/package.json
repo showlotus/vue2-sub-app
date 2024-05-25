@@ -1,7 +1,7 @@
 {
   "name": "vue2-sub-app",
   "version": "1.0.0-beta.1",
-  "description": "A plugin can make any component can be used as the Root-like component.",
+  "description": "Make any component can be used as the Root-like component.",
   "files": [
     "dist",
     "types"
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/showlotus/vue2-sub-app/issues"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.12"
+  }
 }
