@@ -7,7 +7,7 @@ interface SubRoute {
 
 interface SubRouteParams {
   path: string
-  params: Record<string, any>
+  params?: Record<string, any>
 }
 
 export default class SubRouter {
@@ -31,7 +31,7 @@ export default class SubRouter {
     subApp._subAppRoute = this._subAppRoute
   }
 
-  push(path: string, params: Record<string, any>) {
+  push(path: string, params?: Record<string, any>) {
     if (path === this._subAppRoute.path) {
       return
     }
@@ -42,7 +42,7 @@ export default class SubRouter {
     this.history[this.currentHistoryIndex] = route
   }
 
-  replace(path: string, params: Record<string, any>) {
+  replace(path: string, params?: Record<string, any>) {
     const route = { path, params }
     this.update(route)
     this.history[this.currentHistoryIndex] = route

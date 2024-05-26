@@ -6,9 +6,10 @@
 </template>
 
 <script>
+import { defineSubRoot } from 'vue2-sub-app'
 import ChildThree from './ChildThree.vue'
 
-export default {
+export default defineSubRoot({
   name: 'ChildTwo',
   components: { ChildThree },
   data() {
@@ -22,7 +23,7 @@ export default {
   },
   created() {},
   mounted() {},
-}
+})
 </script>
 
 <style scoped></style>
