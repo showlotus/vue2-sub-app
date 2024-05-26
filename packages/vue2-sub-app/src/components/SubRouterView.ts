@@ -5,7 +5,6 @@ export default {
     const { parent, data, children } = options
     const { $subRoute, $subRouter, $createElement: h } = parent
     const component = $subRouter.getMatchComponent($subRoute.path)
-    console.log($subRouter, component)
     if (!component) {
       return h()
     }

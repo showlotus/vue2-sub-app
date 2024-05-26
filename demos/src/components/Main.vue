@@ -70,11 +70,14 @@ export default defineSubRoot({
     </button>
     <button @click="$subRouter.pop()">$subRouter.pop()</button>
 
-    <ul>
-      <li v-for="(h, i) in $subRouter.history" :key="h.path">
-        {{ i + 1 }}. {{ h }}
-      </li>
-    </ul>
+    <div class="subroute-history">
+      <div>SubRouter History</div>
+      <ol>
+        <li v-for="(h, i) in $subRouter.history" :key="h.path">
+          {{ h }}
+        </li>
+      </ol>
+    </div>
 
     <SubRouterLink
       v-for="route in routes"
@@ -124,5 +127,19 @@ export default defineSubRoot({
 .view {
   padding: 16px;
   border: 1px dashed;
+}
+
+.subroute-history {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.subroute-history ol {
+  flex: 1;
+  overflow: auto;
 }
 </style>
