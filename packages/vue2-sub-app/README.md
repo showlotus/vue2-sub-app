@@ -1,8 +1,6 @@
-# <center>Vue2-Sub-App</center>
+# Vue2-Sub-App
 
-<p align='center'>
-  简体中文 ｜ <a href='./README.en-US.md'>English</a>
-</p>
+简体中文 ｜ <a href='./README.en-US.md'>English</a>
 
 ## 介绍
 
@@ -60,7 +58,7 @@ export default defineSubRoot({
 
 ### defineSubRoot(config)
 
-- `config`: 组件选项对象。
+`config`: 组件选项对象。
 
 将当前组件定义成一个子根组件，该组件的所有后代组件都可以通过 `this.$subRoot` 得到当前组件的实例。
 

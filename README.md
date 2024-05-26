@@ -1,8 +1,6 @@
-# <center>Vue2-Sub-App</center>
+# Vue2-Sub-App
 
-<p align='center'>
-  简体中文 ｜ <a href='./README.en-US.md'>English</a>
-</p>
+简体中文 ｜ <a href='./README.en-US.md'>English</a>
 
 ## 介绍
 
