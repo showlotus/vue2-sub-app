@@ -1,6 +1,6 @@
 {
   "name": "vue2-sub-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Make any component can be used as the Root-like component.",
   "files": [
     "dist",
