@@ -1,6 +1,6 @@
 # Vue2-Sub-App
 
-简体中文 ｜ <a href='./README.en-US.md'>English</a>
+简体中文 ｜ <a href='/packages/vue2-sub-app/README.md'>English</a>
 
 ## 介绍
 
