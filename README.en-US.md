@@ -1,1 +1,0 @@
-packages/vue2-sub-app/README.en-US.md

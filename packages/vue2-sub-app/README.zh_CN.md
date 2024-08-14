@@ -1,10 +1,12 @@
 # Vue2-Sub-App
 
-English | <a  href='/packages/vue2-sub-app/README-zh_CN.md'>简体中文</a>
+简体中文 ｜ <a href='./README.en-US.md'>English</a>
 
-When I was developing a company project using [Vue2](https://github.com/vuejs/vue), because of the card-style development, each component can be individually packaged into a _JS_ resource that is loaded into the current page via the card loader. When the card functionality is particularly complex (so complex that it can stand alone as an application), I want to get the current card root component instance in the descendant component of the current card (Similar to `$root` attribute), and components like _RouterLink_ and _RouterView_ have to take a different approach. Of course, these can be completely simulated by `provide` + `inject`, `v-if`, etc. However, I wanted to make it simpler, so here it is!
+## 介绍
 
-## Install
+当我在使用 [Vue2](https://github.com/vuejs/vue) 开发公司项目时，由于是卡片式的开发，每个组件都可以单独打包成一个 _JS_ 资源，通过卡片加载器加载到当前页面中。当卡片功能特别复杂时（复杂到它可以单独作为一个应用），而我又想在当前卡片的后代组件中，获取当前卡片根组件实例（类似 `$root` 属性），以及组件 _RouterLink_ 和 _RouterView_ 类似的功能时，就不得不另辟蹊径。当然，这些完全可以通过 `provide` + `inject`、`v-if` 等去模拟。但是，我想再简单一点，于是，这个插件就这样来啦！
+
+## 安装
 
 ```shell
 # npm
@@ -17,9 +19,9 @@ yarn add vue2-sub-app
 pnpm install vue2-sub-app
 ```
 
-## Usage
+## 使用
 
-### Full Import
+### 全局导入
 
 ```js
 // main.js
@@ -33,7 +35,7 @@ new Vue({
 })
 ```
 
-### Manually Import
+### 按需导入
 
 ```js
 <script>
@@ -52,13 +54,13 @@ export default defineSubRoot({
 </script>
 ```
 
-## APIs
+## 方法
 
 ### defineSubRoot(config)
 
-`config`: component option object.
+`config`: 组件选项对象。
 
-The current component is defined as a child-root component, and all descendant components of the component can get an instance of the current component through `this.$subRoot`.
+将当前组件定义成一个子根组件，该组件的所有后代组件都可以通过 `this.$subRoot` 得到当前组件的实例。
 
 ```html
 <!-- Parent.vue -->
@@ -92,13 +94,13 @@ The current component is defined as a child-root component, and all descendant c
 </script>
 ```
 
-## Options
+## 配置项
 
 ### isSubRoot
 
 type: `boolean`
 
-If **Manually Import** is used, configure this property in the exported component options to make the current component a child-root component.
+在 **全局引入** 的场景下，在导出的组件选项中配置该属性，可将当前组件作为一个子根组件。
 
 ```js
 export default {
@@ -116,7 +118,7 @@ export default {
 
 type: `Array<{ path: string, component: VueComponent }>`
 
-Configure subrouting information in the exported component options.
+在导出的组件选项中配置子路由相关信息。
 
 ```js
 export default defineSubRoot({
@@ -140,61 +142,61 @@ export default defineSubRoot({
 })
 ```
 
-## Instance
+## 实例
 
 ### $subRoot
 
 type: `VueComponent`
 
-The child-root component instance closest to the current component.
+距离当前组件最近的子根组件实例。
 
 ### $subRoute
 
 type: `SubRoute`
 
-The current subroute.
+当前的子路由。
 
-#### Props
+#### 属性
 
 ##### $subRoute.path
 
-Location of the current subroute.
+当前子路由的地址。
 
 ##### $subRoute.params
 
-Parameter of the current subroute.
+当前子路由的参数。
 
 ### $subRouter
 
 type: `SubRouter`
 
-The subrouter instance.
+子路由实例。
 
-#### Methods
+#### 方法
 
 ##### $subRouter.push(path, params?)
 
-Navigate to the new subrouting location.
+导航到新的子路由地址。
 
 ##### $subRouter.replace(path, params?)
 
-Replace the current subroute location.
+替换当前子路由地址。
 
 ##### $subRouter.pop()
 
-Back up to the next subroute.
+后退到上一级子路由。
 
-## Components
+## 组件
 
 ### SubRouterLink
 
-#### Props
+#### 属性
 
 ##### to
 
 type: `string`
 
-The location of the target subroute.
+目标子路由的地址。
 
 ##### tag
 
@@ -202,8 +204,8 @@ type: `string`
 
 default: `"a"`
 
-Specify which tag `<SubRouterLink>` is rendered to.
+指定 `<SubRouterLink>` 渲染成哪个标签。
 
 ### SubRouterView
 
-Renders the component corresponding to the current subroute.
+渲染当前子路由对应的组件。
