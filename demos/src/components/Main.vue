@@ -71,7 +71,7 @@ export default defineSubRoot({
     <button @click="$subRouter.pop()">$subRouter.pop()</button>
 
     <div class="subroute-history">
-      <div>SubRouter History</div>
+      <div>SubRouter History({{ $subRouter.history.length }})</div>
       <ol>
         <li v-for="(h, i) in $subRouter.history" :key="h.path">
           {{ h }}

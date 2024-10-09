@@ -53,7 +53,7 @@ export default class SubRouter {
       return
     }
 
-    this.history.splice(this.currentHistoryIndex, 1, {} as SubRouteParams)
+    this.history.splice(this.currentHistoryIndex, 1)
     this.currentHistoryIndex =
       (this.currentHistoryIndex - 1 + this.maxRecords) % this.maxRecords
     this.update(this.history[this.currentHistoryIndex] || {})
